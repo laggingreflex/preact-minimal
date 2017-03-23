@@ -6,6 +6,7 @@ import Home from 'views/home/home';
 import Header from 'components/header/header';
 
 const renderApp = () => {
+    const target = document.getElementById('root')
     render((
         <article>
             <Header title="Hello World" />
@@ -13,13 +14,17 @@ const renderApp = () => {
                 <Home path="/"/>
             </Router>
         </article>
-    ), document.getElementById('root'));
+    ), target, target.lastChild);
 };
 
 renderApp();
 
 if (module.hot) {
     module.hot.accept('views/home/home', renderApp);
+}
+
+if (window.onModulesLoaded) {
+    window.onModulesLoaded();
 }
 
 if (process.env.NODE_ENV === 'production') {

@@ -9,6 +9,9 @@
   "author": "Alejandro Garcia Anglada <aganglada@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "koa": "^2.2.0",
+    "koa-ssr": "^0.2.0",
+    "koa-static": "^3.0.0",
     "preact": "^7.2.0",
     "preact-router": "^2.4.1"
   },
@@ -37,6 +40,7 @@
     "webpack:prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.babel.js --env=production",
     "dev": "npm run webpack:dev",
     "prod": "npm run webpack:prod && npm run copy:assets && npm run copy:manifest",
-    "start": "http-server assets/"
+    "start": "http-server assets/",
+    "start-ssr": "node server.js"
   }
 }
